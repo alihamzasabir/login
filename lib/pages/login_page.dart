@@ -12,10 +12,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
-  TextEditingController userTextEditingController = new TextEditingController();
-  TextEditingController statusTextEditingController = new TextEditingController();
-  TextEditingController pdTextEditingController = new TextEditingController();
   bool hidePassword = true;
   bool isApiCallProcess = false;
   GlobalKey<FormState> globalFormKey = GlobalKey<FormState>();
@@ -105,8 +101,8 @@ class _LoginPageState extends State<LoginPage> {
                 keyboardType: TextInputType.text,
                 onSaved: (input) =>
                 loginRequestModel.password = input,
-                validator: (input) => input.length <= 3
-                    ? "Password should be more than 3 characters"
+                validator: (input) => input.length <= 2
+                    ? "Password should be more than 2 characters"
                     : null,
                 obscureText: hidePassword,
                 decoration: new InputDecoration(
